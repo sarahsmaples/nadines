@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
   // Add plugins
   eleventyConfig.addPlugin(sitemap, {
     sitemap: {
-      hostname: "https://www.example.com", // Replace with your client's URL
+      hostname: "https://sarahsmaples.github.io/nadines",
     },
   });
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("dist/css/styles.css");
 
   return {
+    pathPrefix: "/nadines/",
     dir: {
       input: "src",
       output: "dist",

@@ -13,7 +13,7 @@ module.exports = {
     { days: "Saturday",  time: "12pm – 10pm" },
     { days: "Sunday",    time: "12pm – 8pm" },
   ],
-  domain: "https://nadinesrestaurant.com",
+  domain: "https://sarahsmaples.github.io/nadines",
   social: {
     facebook: "https://www.facebook.com/p/Nadines-Restaurant-100057216168995/",
     instagram: "https://www.instagram.com/nadines_restaurant_/",
