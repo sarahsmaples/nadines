@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-espresso font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-espresso;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest text-cream px-5 py-2.5 rounded text-sm font-body font-bold uppercase tracking-wider hover:bg-amber transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border border-forest text-forest px-5 py-2.5 rounded text-sm font-body font-bold uppercase tracking-wider hover:bg-forest hover:text-cream transition-colors duration-200;
+  }
+
+  .section-heading {
+    @apply font-heading text-3xl md:text-4xl text-espresso mb-6;
+  }
+}

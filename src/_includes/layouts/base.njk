@@ -28,8 +28,10 @@
     <!-- Sitewide Stylesheets and Scripts -->
     <link rel="stylesheet" href="/assets/css/styles.css">
 
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 
     {% block head %}{% endblock %}
 
@@ -38,15 +40,52 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "Restaurant",
         "name": "{{ client.name }}",
         "url": "{{ client.domain }}",
         "logo": "{{ client.domain }}/assets/images/logo.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "{{ client.phone }}",
-          "contactType": "Customer Service"
-        }
+        "image": "{{ client.domain }}/assets/images/og-image.webp",
+        "telephone": "{{ client.phone }}",
+        "servesCuisine": ["German", "Austrian", "French"],
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ client.address.street }}",
+          "addressLocality": "{{ client.address.city }}",
+          "addressRegion": "{{ client.address.state }}",
+          "postalCode": "{{ client.address.zip }}",
+          "addressCountry": "US"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "16:00",
+            "closes": "21:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "16:00",
+            "closes": "22:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "12:00",
+            "closes": "22:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "12:00",
+            "closes": "20:00"
+          }
+        ],
+        "sameAs": [
+          "{{ client.social.facebook }}",
+          "{{ client.social.instagram }}"
+        ]
       }
     </script>
 
@@ -54,12 +93,13 @@
 
   </head>
 
-  <body>
+  <body class="{% block body_class %}{% endblock %}">
     {% include "components/header.njk" %}
     <main>
       {% block content %}{% endblock %}
     </main>
-    {% include "components/footer.njk" %}
+    {% block footer %}{% include "components/footer.njk" %}{% endblock %}
     <script src="/assets/js/main.js"></script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>
