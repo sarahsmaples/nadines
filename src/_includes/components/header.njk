@@ -1,6 +1,6 @@
 <header class="bg-cream border-b border-amber/30 sticky top-0 z-50">
   <div class="max-w-screen-xl mx-auto px-4 py-2 flex items-center justify-between">
-    <a href="/" class="flex-shrink-0">
+    <a href="{{ '/' | url }}" class="flex-shrink-0">
       <img src="{{ '/assets/images/logo.png' | url }}" alt="{{ client.name }}" style="max-width: 250px; width: 100%; height: auto;">
     </a>
     <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-espresso rounded-lg md:hidden hover:bg-amber/10 focus:outline-none focus:ring-2 focus:ring-amber/30" aria-controls="main-nav" aria-expanded="false">
@@ -11,12 +11,12 @@
     </button>
     <nav id="main-nav" class="hidden w-full md:flex md:w-auto md:items-center" aria-label="Main navigation">
       <ul class="flex flex-col mt-4 md:flex-row md:mt-0 md:space-x-8 md:items-center font-body font-bold text-sm uppercase tracking-widest">
-        <li><a href="/" class="block py-2 text-espresso hover:text-amber">Home</a></li>
-        <li><a href="/menu/" class="block py-2 text-espresso hover:text-amber">Menu</a></li>
-        <li><a href="/events/" class="block py-2 text-espresso hover:text-amber">Events</a></li>
-        <li><a href="/#about" class="block py-2 text-espresso hover:text-amber">About</a></li>
-        <li><a href="/#reservations" class="block py-2 text-espresso hover:text-amber">Reservations</a></li>
-        <li><a href="/#contact" class="block py-2 text-espresso hover:text-amber">Contact</a></li>
+        <li><a href="{{ '/' | url }}" class="block py-2 text-espresso hover:text-amber">Home</a></li>
+        <li><a href="{{ '/menu/' | url }}" class="block py-2 text-espresso hover:text-amber">Menu</a></li>
+        <li><a href="{{ '/events/' | url }}" class="block py-2 text-espresso hover:text-amber">Events</a></li>
+        <li><a href="{{ '/' | url }}#about" class="block py-2 text-espresso hover:text-amber">About</a></li>
+        <li><a href="{{ '/' | url }}#reservations" class="block py-2 text-espresso hover:text-amber">Reservations</a></li>
+        <li><a href="{{ '/' | url }}#contact" class="block py-2 text-espresso hover:text-amber">Contact</a></li>
         <li><a href="https://88restaurants.com/799/online_orders/new" class="btn-primary ml-4">Order Online</a></li>
       </ul>
     </nav>
