@@ -11,8 +11,9 @@ module.exports = {
         burgundy: "#7A3B3B",
       },
       fontFamily: {
-        heading: ['"Playfair Display"', "Georgia", "serif"],
-        body:    ['"Lato"', "sans-serif"],
+        heading:   ['"Playfair Display"', "Georgia", "serif"],
+        body:      ['"Lato"', "sans-serif"],
+        fraktur:   ['"UnifrakturMaguntia"', "cursive"],
       },
     },
   },
