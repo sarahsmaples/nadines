@@ -27,8 +27,10 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
 
 {% block content %}
   {# ── HERO ── #}
-  <section class="bg-cream overflow-hidden">
-    <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-8 md:pt-24 md:pb-10 flex flex-col md:flex-row md:items-center gap-12 md:gap-16">
+  <section class="bg-cream overflow-hidden relative">
+    {# Fraktur watermark #}
+    <span class="font-fraktur text-[8rem] md:text-[16rem] leading-none text-amber/10 select-none pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap overflow-hidden">Gemütlichkeit</span>
+    <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-8 md:pt-24 md:pb-10 flex flex-col md:flex-row md:items-center gap-12 md:gap-16 relative z-10">
 
       {# Left: text #}
       <div class="flex-1 max-w-xl fade-up">
@@ -70,10 +72,6 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
 
   <section id="about" class="bg-cream overflow-hidden">
 
-    {# Fraktur accent banner #}
-    <div class="text-center pt-6 pb-4 select-none pointer-events-none">
-      <span class="font-fraktur text-7xl md:text-9xl text-espresso/10 leading-none">Gemütlichkeit</span>
-    </div>
 
     <div class="max-w-screen-xl mx-auto px-6 pb-20 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
 

@@ -674,6 +674,9 @@ video {
 .ml-4 {
   margin-left: 1rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -894,6 +897,9 @@ video {
 .overflow-hidden {
   overflow: hidden;
 }
+.whitespace-nowrap {
+  white-space: nowrap;
+}
 .rounded {
   border-radius: 0.25rem;
 }
@@ -998,9 +1004,6 @@ video {
 .pb-20 {
   padding-bottom: 5rem;
 }
-.pb-4 {
-  padding-bottom: 1rem;
-}
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -1041,12 +1044,11 @@ video {
   font-size: 3rem;
   line-height: 1;
 }
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
 .text-\[10rem\] {
   font-size: 10rem;
+}
+.text-\[8rem\] {
+  font-size: 8rem;
 }
 .text-base {
   font-size: 1rem;
@@ -1089,6 +1091,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(193 127 36 / var(--tw-text-opacity));
 }
+.text-amber\/10 {
+  color: rgb(193 127 36 / 0.1);
+}
 .text-cream {
   --tw-text-opacity: 1;
   color: rgb(250 246 239 / var(--tw-text-opacity));
@@ -1114,9 +1119,6 @@ video {
 .text-espresso {
   --tw-text-opacity: 1;
   color: rgb(44 24 16 / var(--tw-text-opacity));
-}
-.text-espresso\/10 {
-  color: rgb(44 24 16 / 0.1);
 }
 .text-espresso\/70 {
   color: rgb(44 24 16 / 0.7);
@@ -1296,11 +1298,6 @@ video {
 
   .md\:text-6xl {
     font-size: 3.75rem;
-    line-height: 1;
-  }
-
-  .md\:text-9xl {
-    font-size: 8rem;
     line-height: 1;
   }
 
