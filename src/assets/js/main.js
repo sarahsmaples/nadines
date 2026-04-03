@@ -11,6 +11,18 @@ if (slides.length > 1) {
   }, 4000);
 }
 
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
 // Mobile nav toggle
 const menuToggle = document.getElementById("menu-toggle");
 const mainNav = document.getElementById("main-nav");
