@@ -3,14 +3,9 @@
     <a href="{{ '/' | url }}" class="flex-shrink-0">
       <img src="{{ '/assets/images/logo.png' | url }}" alt="{{ client.name }}" style="max-width: 250px; width: 100%; height: auto;">
     </a>
-    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-espresso rounded-lg md:hidden hover:bg-amber/10 focus:outline-none focus:ring-2 focus:ring-amber/30" aria-controls="main-nav" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-      </svg>
-    </button>
-    <nav id="main-nav" class="hidden w-full md:flex md:w-auto md:items-center" aria-label="Main navigation">
-      <ul class="flex flex-col mt-4 md:flex-row md:mt-0 md:space-x-8 md:items-center font-body font-bold text-sm uppercase tracking-widest">
+    {# Desktop nav #}
+    <nav class="hidden md:flex md:w-auto md:items-center" aria-label="Main navigation">
+      <ul class="flex flex-row md:space-x-8 md:items-center font-body font-bold text-sm uppercase tracking-widest">
         <li><a href="{{ '/menu/' | url }}" class="block py-2 text-espresso hover:text-amber">Menu</a></li>
         <li><a href="{{ '/events/' | url }}" class="block py-2 text-espresso hover:text-amber">Events</a></li>
         <li><a href="{{ '/gallery/' | url }}" class="block py-2 text-espresso hover:text-amber">Gallery</a></li>
@@ -20,5 +15,24 @@
         <li><a href="https://88restaurants.com/799/online_orders/new" class="btn-primary ml-4">Order Online</a></li>
       </ul>
     </nav>
+    {# Mobile hamburger #}
+    <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-espresso rounded-lg md:hidden hover:bg-amber/10 focus:outline-none focus:ring-2 focus:ring-amber/30" aria-controls="main-nav" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+    </button>
+  </div>
+  {# Mobile nav dropdown — unfurls below header bar #}
+  <div id="main-nav" class="hidden md:hidden bg-cream border-t border-amber/30">
+    <ul class="flex flex-col px-6 py-4 font-body font-bold text-sm uppercase tracking-widest space-y-3">
+      <li><a href="{{ '/menu/' | url }}" class="block py-1 text-espresso hover:text-amber">Menu</a></li>
+      <li><a href="{{ '/events/' | url }}" class="block py-1 text-espresso hover:text-amber">Events</a></li>
+      <li><a href="{{ '/gallery/' | url }}" class="block py-1 text-espresso hover:text-amber">Gallery</a></li>
+      <li><a href="{{ '/' | url }}#about" class="block py-1 text-espresso hover:text-amber">About</a></li>
+      <li><a href="{{ '/' | url }}#reservations" class="block py-1 text-espresso hover:text-amber">Reservations</a></li>
+      <li><a href="{{ '/' | url }}#contact" class="block py-1 text-espresso hover:text-amber">Contact</a></li>
+      <li class="pt-2"><a href="https://88restaurants.com/799/online_orders/new" class="btn-primary inline-block">Order Online</a></li>
+    </ul>
   </div>
 </header>
