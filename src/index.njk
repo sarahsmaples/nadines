@@ -181,7 +181,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
   </section>
 
   <section id="reservations" class="bg-cream relative z-20">
-    <div class="max-w-screen-xl mx-auto px-6 py-20">
+    <div class="max-w-screen-xl mx-auto px-6 py-20 lg:pb-36">
 
       <div class="text-center mb-12">
         <p class="font-body font-bold text-xs uppercase tracking-widest text-amber mb-3">Join Us</p>
@@ -213,8 +213,10 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
   </section>
 
   {# ── BEER GARDEN ── #}
-  <section id="beer-garden" class="bg-espresso relative z-10">
-    <div class="flex flex-col lg:flex-row min-h-[640px] pt-[80px] lg:pt-0">
+  <section id="beer-garden" class="bg-espresso lg:bg-transparent relative z-10 lg:z-30">
+    <div class="flex flex-col lg:flex-row min-h-[640px] pt-[80px] lg:pt-0 relative">
+      {# Desktop espresso bg — starts below the photo bleed area so cream shows through at top #}
+      <div class="hidden lg:block absolute inset-x-0 bottom-0 top-16 bg-espresso -z-10"></div>
 
       {# Left: text panel (desktop: order-2, pushed right) #}
       <div class="w-fit flex flex-col justify-center px-10 py-24 lg:px-16 relative overflow-hidden lg:order-2">
@@ -239,7 +241,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
         {# Fraktur watermark #}
         <span class="prost-watermark font-fraktur text-amber/20 select-none pointer-events-none absolute lg:top-0 -right-8 bottom-0 flex items-center justify-center" style="writing-mode: vertical-rl; font-size: clamp(8rem, 20vw, 22rem); line-height: 1;">Próst!</span>
         {# Back: top-left, overlapped by middle #}
-        <div class="absolute top-4 left-2 w-[55%] h-[50%] lg:top-0 lg:left-4 lg:w-[48%] lg:h-[52%] overflow-hidden shadow-2xl rotate-[-3deg] border-4 border-cream">
+        <div class="absolute top-4 left-2 w-[55%] h-[50%] lg:-top-16 lg:left-4 lg:w-[48%] lg:h-[52%] overflow-hidden shadow-2xl rotate-[-3deg] border-4 border-cream">
           <img src="{{ '/assets/images/beer-garden-1.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover">
         </div>
         {# Middle: large, overlaps back, shifted left #}

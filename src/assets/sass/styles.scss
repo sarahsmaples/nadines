@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 .prost-watermark {
+  @media (min-width: 1024px) {
+    font-size: clamp(4rem, 8vw, 10rem);
+  }
   @media (max-width: 1023px) {
     top: -35rem;
     right: 0;
