@@ -29,7 +29,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
   {# ── HERO ── #}
   <section class="bg-cream overflow-hidden relative">
     {# Fraktur watermark #}
-    <span class="font-fraktur text-[8rem] md:text-[16rem] leading-none text-amber/10 select-none pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap overflow-hidden">Gemütlichkeit</span>
+    <span class="hero-watermark font-fraktur leading-none text-amber/10 select-none pointer-events-none absolute inset-0 flex items-center justify-center whitespace-nowrap overflow-hidden md:text-[16rem]">Gemütlichkeit</span>
     <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-24 flex flex-col md:flex-row md:items-center gap-12 md:gap-16 relative z-10">
 
       {# Left: text #}
@@ -75,8 +75,8 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
 
     <div class="max-w-screen-xl mx-auto px-6 pb-20 flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
 
-      {# Mosaic #}
-      <div class="flex-1 grid grid-cols-3 gap-3 h-[480px] lg:h-[560px] fade-up">
+      {# Mosaic — order-last on mobile so text appears first #}
+      <div class="flex-1 grid grid-cols-3 gap-3 h-[480px] lg:h-[560px] fade-up order-last lg:order-first">
         {# plates-1: tall skinny far left, spans full height #}
         <div class="row-span-2 rounded-2xl overflow-hidden col-span-1">
           <img src="{{ '/assets/images/plates-1.jpg' | url }}" alt="Nadine's dishes" class="w-full h-full object-cover">
@@ -132,7 +132,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
       <div class="grid grid-cols-1 md:grid-cols-[1fr_1.35fr_1fr] gap-8 fade-up" style="align-items: end;">
 
         {# Drinks — left #}
-        <a href="{{ '/drinks/' | url }}" class="group flex flex-col rounded-2xl overflow-hidden border border-amber/40 hover:border-amber transition-colors duration-300 mb-12">
+        <a href="{{ '/drinks/' | url }}" class="group flex flex-col rounded-2xl overflow-hidden border border-amber/40 hover:border-amber transition-colors duration-300 md:mb-12">
           <div class="h-56 overflow-hidden">
             <img src="{{ '/assets/images/thumbnail-drinks-menu.jpg' | url }}" alt="Bar & Drinks" class="w-full h-full object-cover">
           </div>
@@ -146,8 +146,8 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
           </div>
         </a>
 
-        {# All Day Menu — featured center #}
-        <a href="{{ '/menu/' | url }}" class="group flex flex-col rounded-2xl overflow-hidden border border-amber/30 hover:border-amber transition-colors duration-300 shadow-2xl">
+        {# All Day Menu — featured center; shown first on mobile #}
+        <a href="{{ '/menu/' | url }}" class="group flex flex-col rounded-2xl overflow-hidden border border-amber/30 hover:border-amber transition-colors duration-300 shadow-2xl order-first md:order-none">
           <div class="h-80 overflow-hidden">
             <img src="{{ '/assets/images/thumbnail-main-menu.jpg' | url }}" alt="All Day Menu" class="w-full h-full object-cover">
           </div>
@@ -162,7 +162,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
         </a>
 
         {# Specials — right #}
-        <a href="{{ '/specials/' | url }}" class="group flex flex-col rounded-2xl overflow-hidden border border-amber/40 hover:border-amber transition-colors duration-300 mb-12">
+        <a href="{{ '/specials/' | url }}" class="group flex flex-col rounded-2xl overflow-hidden border border-amber/40 hover:border-amber transition-colors duration-300 md:mb-12">
           <div class="h-56 overflow-hidden">
             <img src="{{ '/assets/images/thumbnail-specials-menu.jpg' | url }}" alt="Chef's Specials" class="w-full h-full object-cover">
           </div>
@@ -180,7 +180,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
     </div>
   </section>
 
-  <section id="reservations" class="bg-cream">
+  <section id="reservations" class="bg-cream relative z-20">
     <div class="max-w-screen-xl mx-auto px-6 py-20">
 
       <div class="text-center mb-12">
@@ -196,13 +196,13 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
         {# Image with rounded corners floating over background #}
-        <div class="flex-1 w-full fade-up">
+        <div class="flex-1 w-full fade-up order-last lg:order-first -mb-[168px] lg:mb-0">
           <img src="{{ '/assets/images/interior-3.jpg' | url }}" alt="Nadine's dining room" class="w-full h-[480px] object-cover rounded-2xl shadow-xl">
         </div>
 
         {# Widget + blurb #}
-        <div class="flex-none w-full lg:w-[320px] flex flex-col items-start fade-up" style="transition-delay: 0.15s">
-          <p class="font-body text-espresso/70 text-lg leading-relaxed mb-8">
+        <div class="flex-none w-full lg:w-[320px] flex flex-col items-center lg:items-start fade-up" style="transition-delay: 0.15s">
+          <p class="font-body text-espresso/70 text-lg leading-relaxed mb-8 text-center lg:text-left">
             We'd love to have you. Book your table below and we'll have everything ready for your visit.
           </p>
           <iframe id="widget" width="300" height="442" src="https://88restaurants.com/799/widgets/302" style="border: none; background: none; border-radius: 5px;"></iframe>
@@ -213,8 +213,8 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
   </section>
 
   {# ── BEER GARDEN ── #}
-  <section id="beer-garden" class="bg-espresso overflow-hidden">
-    <div class="flex flex-col lg:flex-row min-h-[640px]">
+  <section id="beer-garden" class="bg-espresso lg:overflow-hidden relative z-10">
+    <div class="flex flex-col lg:flex-row min-h-[640px] pt-[80px] lg:pt-0">
 
       {# Left: text panel #}
       <div class="w-fit flex flex-col justify-center px-10 py-24 lg:px-16 relative overflow-hidden">
@@ -235,19 +235,19 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
       </div>
 
       {# Right: overlapping collage #}
-      <div class="flex-1 relative min-h-[520px] lg:min-h-0 p-12 fade-up overflow-hidden" style="transition-delay: 0.15s">
-        {# Fraktur watermark — full height, far right, partially clipped #}
-        <span class="font-fraktur text-amber/20 select-none pointer-events-none absolute inset-y-0 -right-8 flex items-center justify-center" style="writing-mode: vertical-rl; font-size: clamp(8rem, 20vw, 22rem); line-height: 1;">Próst!</span>
-        {# Back: small, top left, counter-clockwise tilt #}
-        <div class="absolute top-10 left-2 w-[38%] h-[38%] overflow-hidden shadow-2xl rotate-[-3deg] border-4 border-cream">
+      <div class="flex-1 relative min-h-[520px] lg:min-h-0 p-12 fade-up -mb-[120px] lg:mb-0" style="transition-delay: 0.15s">
+        {# Fraktur watermark #}
+        <span class="prost-watermark font-fraktur text-amber/20 select-none pointer-events-none absolute lg:top-0 -right-8 bottom-0 flex items-center justify-center" style="writing-mode: vertical-rl; font-size: clamp(8rem, 20vw, 22rem); line-height: 1;">Próst!</span>
+        {# Back: top-left, overlapped by middle #}
+        <div class="absolute top-4 left-2 w-[55%] h-[50%] lg:top-10 lg:left-2 lg:w-[38%] lg:h-[38%] overflow-hidden shadow-2xl rotate-[-3deg] border-4 border-cream">
           <img src="{{ '/assets/images/beer-garden-1.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover">
         </div>
-        {# Middle: large, center-right, clockwise tilt #}
-        <div class="absolute top-12 left-[22%] w-[55%] h-[60%] overflow-hidden shadow-2xl rotate-[2deg] border-4 border-cream">
+        {# Middle: large, overlaps back, shifted left #}
+        <div class="absolute top-48 left-[22%] w-[68%] h-[58%] lg:top-12 lg:bottom-auto lg:left-[22%] lg:w-[55%] lg:h-[60%] overflow-hidden shadow-2xl rotate-[2deg] border-4 border-cream">
           <img src="{{ '/assets/images/beer-garden-3.jpg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover">
         </div>
-        {# Front: small, bottom, slight tilt #}
-        <div class="absolute bottom-8 left-[28%] w-[30%] h-[30%] overflow-hidden shadow-2xl rotate-[-1.5deg] border-4 border-cream">
+        {# Front: bottom, overlaps middle #}
+        <div class="hidden lg:block absolute lg:bottom-8 lg:left-[28%] lg:w-[30%] lg:h-[30%] overflow-hidden shadow-2xl rotate-[-1.5deg] border-4 border-cream">
           <img src="{{ '/assets/images/beer-garden-5.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover">
         </div>
       </div>
@@ -255,7 +255,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
     </div>
   </section>
 
-  <section id="contact" class="relative overflow-hidden">
+  <section id="contact" class="relative overflow-hidden -mt-[120px] lg:mt-0">
     {# Background image #}
     <div class="absolute inset-0">
       <img src="{{ '/assets/images/bar-1.jpg' | url }}" alt="" class="w-full h-full object-cover">
@@ -263,7 +263,7 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
     </div>
 
     {# Content pushed right #}
-    <div class="relative max-w-screen-xl mx-auto px-6 py-20 flex justify-end">
+    <div class="relative max-w-screen-xl mx-auto px-6 pt-[280px] pb-20 lg:py-20 flex justify-end">
       <div class="w-full lg:w-1/2 bg-cream rounded-2xl shadow-2xl p-10 fade-up">
         <p class="font-body font-bold text-xs uppercase tracking-widest text-amber mb-3">Get in Touch</p>
         <h2 class="font-heading text-4xl text-espresso mb-4">Contact Us</h2>

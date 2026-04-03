@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.prost-watermark {
+  @media (max-width: 1023px) {
+    top: -35rem;
+    right: 0;
+  }
+}
+
+.hero-watermark {
+  font-size: 16rem;
+  @media (max-width: 767px) {
+    writing-mode: vertical-rl;
+    font-size: clamp(5rem, 22vw, 9rem);
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
 @layer utilities {
   .fade-up {
     opacity: 0;
