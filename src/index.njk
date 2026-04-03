@@ -179,29 +179,35 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
     </div>
   </section>
 
-  <section id="reservations" class="bg-cream overflow-hidden">
-    <div class="flex flex-col lg:flex-row min-h-[600px]">
+  <section id="reservations" class="bg-cream">
+    <div class="max-w-screen-xl mx-auto px-6 py-20">
 
-      {# Left: interior photo #}
-      <div class="flex-1 min-h-[400px] lg:min-h-0">
-        <img src="{{ '/assets/images/interior-3.jpg' | url }}" alt="Nadine's dining room" class="w-full h-full object-cover">
-      </div>
-
-      {# Right: text + widget #}
-      <div class="flex-1 flex flex-col justify-center px-10 py-16 lg:px-16">
+      <div class="text-center mb-12">
         <p class="font-body font-bold text-xs uppercase tracking-widest text-amber mb-3">Join Us</p>
         <h2 class="font-heading text-4xl md:text-5xl text-espresso mb-4">Reservations</h2>
-        <div class="flex items-center gap-3 mb-6">
+        <div class="flex items-center justify-center gap-3">
           <span class="block w-12 h-px bg-amber/50"></span>
           <span class="text-amber">&#9670;</span>
           <span class="block w-12 h-px bg-amber/50"></span>
         </div>
-        <p class="font-body text-espresso/70 text-lg leading-relaxed mb-8">
-          We'd love to have you. Book your table below and we'll have everything ready for your visit.
-        </p>
-        <iframe id="widget" width="300" height="442" src="https://88restaurants.com/799/widgets/302" style="border: none; background: none; border-radius: 5px;"></iframe>
       </div>
 
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+        {# Image with rounded corners floating over background #}
+        <div class="flex-1 w-full">
+          <img src="{{ '/assets/images/interior-3.jpg' | url }}" alt="Nadine's dining room" class="w-full h-[480px] object-cover rounded-2xl shadow-xl">
+        </div>
+
+        {# Widget + blurb #}
+        <div class="flex-1 flex flex-col items-start">
+          <p class="font-body text-espresso/70 text-lg leading-relaxed mb-8">
+            We'd love to have you. Book your table below and we'll have everything ready for your visit.
+          </p>
+          <iframe id="widget" width="300" height="442" src="https://88restaurants.com/799/widgets/302" style="border: none; background: none; border-radius: 5px;"></iframe>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -210,9 +216,9 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
     <div class="flex flex-col lg:flex-row min-h-[640px]">
 
       {# Left: text panel #}
-      <div class="flex-1 flex flex-col justify-center px-10 py-16 lg:px-16 relative">
-        {# Fraktur watermark #}
-        <span class="font-fraktur text-[10rem] md:text-[16rem] leading-none text-cream/5 select-none absolute top-0 left-4 pointer-events-none">Próst!</span>
+      <div class="flex-1 flex flex-col justify-start px-10 py-16 lg:px-16 relative">
+        {# Fraktur watermark — anchored to bottom #}
+        <span class="font-fraktur text-[10rem] md:text-[16rem] leading-none text-cream/5 select-none absolute bottom-0 left-4 pointer-events-none">Próst!</span>
         {# Content #}
         <div class="relative z-10">
           <p class="font-body font-bold text-xs uppercase tracking-widest text-amber mb-3">Nadine's</p>
@@ -229,35 +235,44 @@ description: "Nadine's Restaurant in Yorktown Heights, NY serves traditional Ger
         </div>
       </div>
 
-      {# Right: 2x3 image grid #}
-      <div class="flex-1 grid grid-cols-2 grid-rows-3 gap-1.5 p-1.5 min-h-[480px] lg:min-h-0">
-        <div class="overflow-hidden rounded-tl-lg">
-          <img src="{{ '/assets/images/beer-garden-1.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      {# Right: overlapping collage #}
+      <div class="flex-1 relative min-h-[520px] lg:min-h-0 p-8">
+        {# Back: large base image, slight counter-clockwise tilt #}
+        <div class="absolute top-8 left-8 w-2/5 h-2/5 rounded-2xl overflow-hidden shadow-2xl rotate-[-3deg] border-4 border-amber/40">
+          <img src="{{ '/assets/images/beer-garden-1.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover">
         </div>
-        <div class="overflow-hidden rounded-tr-lg">
-          <img src="{{ '/assets/images/beer-garden-2.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        {# Middle: overlapping right, clockwise tilt #}
+        <div class="absolute top-16 right-4 w-3/5 h-3/5 rounded-2xl overflow-hidden shadow-2xl rotate-[2deg] border-4 border-amber/40">
+          <img src="{{ '/assets/images/beer-garden-3.jpg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover">
         </div>
-        <div class="overflow-hidden">
-          <img src="{{ '/assets/images/beer-garden-3.jpg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="overflow-hidden">
-          <img src="{{ '/assets/images/beer-garden-4.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="overflow-hidden rounded-bl-lg">
-          <img src="{{ '/assets/images/beer-garden-5.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
-        </div>
-        <div class="overflow-hidden rounded-br-lg">
-          <img src="{{ '/assets/images/beer-garden-6.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        {# Front: bottom center, slight tilt, amber border for depth #}
+        <div class="absolute bottom-4 left-1/4 w-1/3 h-1/3 rounded-2xl overflow-hidden shadow-2xl rotate-[-1.5deg] border-4 border-amber/40">
+          <img src="{{ '/assets/images/beer-garden-5.jpeg' | url }}" alt="Nadine's beer garden" class="w-full h-full object-cover">
         </div>
       </div>
 
     </div>
   </section>
 
-  <section id="contact">
-    <div class="max-w-screen-xl mx-auto px-4 py-16">
-      <h2 class="text-3xl font-bold mb-8">Contact</h2>
-      <iframe src="https://88restaurants.com/799/contact_forms" frameborder="0" width="100%" height="545" scrolling="no"></iframe>
+  <section id="contact" class="relative overflow-hidden">
+    {# Background image #}
+    <div class="absolute inset-0">
+      <img src="{{ '/assets/images/bar-1.jpg' | url }}" alt="" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-espresso/60"></div>
+    </div>
+
+    {# Content pushed right #}
+    <div class="relative max-w-screen-xl mx-auto px-6 py-20 flex justify-end">
+      <div class="w-full lg:w-1/2 bg-cream rounded-2xl shadow-2xl p-10">
+        <p class="font-body font-bold text-xs uppercase tracking-widest text-amber mb-3">Get in Touch</p>
+        <h2 class="font-heading text-4xl text-espresso mb-4">Contact Us</h2>
+        <div class="flex items-center gap-3 mb-8">
+          <span class="block w-12 h-px bg-amber/50"></span>
+          <span class="text-amber">&#9670;</span>
+          <span class="block w-12 h-px bg-amber/50"></span>
+        </div>
+        <iframe src="https://88restaurants.com/799/contact_forms" frameborder="0" width="100%" height="545" scrolling="no"></iframe>
+      </div>
     </div>
   </section>
 {% endblock %}
